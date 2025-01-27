@@ -9,7 +9,7 @@ password = os.getenv("PASSWORD")
 server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
 server.login(my_mail, password)
 
-letter = ("""From: {my_mail}
+letter = """From: {my_mail}
 To: {friend_mail}
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8"; 
@@ -29,10 +29,9 @@ Content-Type: text/plain; charset="UTF-8";
 Все проекты — они же решение наших задачек — можно разместить на твоём GitHub. Работодатели такое оценят. 
 
 Регистрируйся → %website%  
-На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл."""
-          .format(my_mail = my_mail, friend_mail = friend_mail))
-friend_name = ("Игорь")
-my_name = ("Дмитрий")
+На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл.""".format(my_mail = my_mail, friend_mail = friend_mail)
+friend_name = "Игорь"
+my_name = "Дмитрий"
 link = "https://dvmn.org/profession-ref-program/id478681245/SPY4Y/"
 letter = letter.replace("%friend_name%", friend_name )
 letter = letter.replace("%my_name%", my_name)
